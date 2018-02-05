@@ -31,5 +31,7 @@ Route::get('/administration/activity', 'AdminController@activity')->name('activi
 
 Route::get('/administration/orders', 'AdminController@orders')->name('orders');
 
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
+
 
 

@@ -12,10 +12,10 @@ class ComposerStaticInit81fcd298eb8219774e5deb99c4542f76
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -74,6 +74,10 @@ class ComposerStaticInit81fcd298eb8219774e5deb99c4542f76
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+        ),
+        'J' => 
+        array (
+            'Jadjoubran\\LaravelAngular\\' => 26,
         ),
         'I' => 
         array (
@@ -225,6 +229,10 @@ class ComposerStaticInit81fcd298eb8219774e5deb99c4542f76
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'Jadjoubran\\LaravelAngular\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jadjoubran/laravel-angular/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -326,6 +334,7 @@ class ComposerStaticInit81fcd298eb8219774e5deb99c4542f76
         'App\\Http\\Controllers\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomerController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\InvoiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvoiceController.php',
+        'App\\Http\\Controllers\\ItemController' => __DIR__ . '/../..' . '/app/Http/Controllers/ItemController.php',
         'App\\Http\\Controllers\\LandingController' => __DIR__ . '/../..' . '/app/Http/Controllers/LandingController.php',
         'App\\Http\\Controllers\\OrdersController' => __DIR__ . '/../..' . '/app/Http/Controllers/OrdersController.php',
         'App\\Http\\Controllers\\SeatController' => __DIR__ . '/../..' . '/app/Http/Controllers/SeatController.php',
@@ -348,6 +357,7 @@ class ComposerStaticInit81fcd298eb8219774e5deb99c4542f76
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
+        'BasicData' => __DIR__ . '/../..' . '/database/seeds/BasicData.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
@@ -1741,6 +1751,10 @@ class ComposerStaticInit81fcd298eb8219774e5deb99c4542f76
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'Jadjoubran\\LaravelAngular\\Command\\InstallCommand' => __DIR__ . '/..' . '/jadjoubran/laravel-angular/src/Command/InstallCommand.php',
+        'Jadjoubran\\LaravelAngular\\Provider\\LaravelAngularServiceProvider' => __DIR__ . '/..' . '/jadjoubran/laravel-angular/src/Provider/LaravelAngularServiceProvider.php',
+        'Jadjoubran\\LaravelAngular\\Provider\\LaravelServiceProvider' => __DIR__ . '/..' . '/jadjoubran/laravel-angular/src/Provider/LaravelServiceProvider.php',
+        'Jadjoubran\\LaravelAngular\\Provider\\LumenServiceProvider' => __DIR__ . '/..' . '/jadjoubran/laravel-angular/src/Provider/LumenServiceProvider.php',
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',

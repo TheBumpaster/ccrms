@@ -10,6 +10,12 @@ use App\Category;
 
 class AppController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +25,11 @@ class AppController extends Controller
     {
         //
         
-        $products = DB::table('products')->get();
         $tables = DB::table('seats')->get();
         $categories = DB::table('categories')->get();
-        
+
+        $products = Product::all();
+
 
         $data = [
             'products' => $products,

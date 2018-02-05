@@ -24,9 +24,13 @@ class OrdersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $id)
     {
         //
+        $order = Order::findOrFail($id);
+
+        return $order;
+
     }
 
     /**
@@ -38,10 +42,9 @@ class OrdersController extends Controller
     public function store(Request $request, $id)
     {
         //
-
-        $order = Order::findOrFail($id);
+        $order = Order::findOrFail($request->id);
         $order->update($request->all());
-        
+
         return $order;
 
     }
@@ -52,9 +55,13 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
+
+        $orders = Order::all();
+
+        return $orders;
     }
 
     /**
