@@ -15,7 +15,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'image', 'price', 'quantity', 'category'
+        'name', 'description', 'image', 'price', 'quantity', 'category', 'created_at'
     ];
 
     /**
@@ -24,7 +24,7 @@ class Product extends Model
      * @var array
      */
     protected $hidden = [
-        'id', 'created_at',
+        'id'
     ];
 
     public function category() {

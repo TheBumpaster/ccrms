@@ -49,5 +49,5 @@
   $records["recordsTotal"] = $iTotalRecords;
   $records["recordsFiltered"] = $iTotalRecords;
   
-  echo json_encode($records);
+  echo json_encode($records['data']);
 ?>

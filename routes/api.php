@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('orders', 'OrdersController@show');
+Route::post('/tableproducts', 'AdminController@tableProducts');
