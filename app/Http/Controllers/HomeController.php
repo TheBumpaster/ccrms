@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+       // $this->middleware('auth');
     }
 
     /**
@@ -25,5 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function tableProducts(Request $request) {
+        return datatables()->query(DB::table('products'))->toJson();
+    }
+
+    public function tableOrders(Request $request) {
+        return datatables()->query(DB::table('orders'))->toJson();
+    }
+
 
 }

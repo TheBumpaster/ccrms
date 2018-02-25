@@ -34,25 +34,28 @@ var TableManaged = function () {
 
             "bStateSave": true, // save datatable state(pagination, sort, etc) in cookie.
 
-            "columns": [{
-                "orderable": false
-            }, {
-                "orderable": true
-            }, {
-                "orderable": false
-            }, {
-                "orderable": false
-            }, {
-                "orderable": true
-            }, {
-                "orderable": false
-            }],
+            "ajax": {
+                "url": '/api/tableproducts',
+                "type": 'POST',
+            },
+
+            "columns": [
+
+            { 'orderable': false, data: null, defaultContent: '<input class="checker" type="checkbox" name="id[]" value="">'},
+            { "orderable": true, data: 'id', name: 'id' }, 
+            { "orderable": true, data: 'name', name: 'name' },
+            { "orderable": true, data: 'category', name: 'category' },
+            { "orderable": false, data: 'price', name: 'price' },
+            { "orderable": false, data: 'quantity', name: 'quantity'},
+            { "orderable": false, data: null, defaultContent: '<a href="/products/" class="btn btn-xs default btn-editable"><i class="fa fa-pencil"></i> Edit</a><a href="#delete" class="btn btn-xs red btn-editable"><i class="fa fa-cross"></i> Delete</a>' },
+
+            ],
             "lengthMenu": [
-                [5, 15, 20, -1],
-                [5, 15, 20, "All"] // change per page values here
+                [5, 15, 30, -1],
+                [5, 15, 30, "All"] // change per page values here
             ],
             // set the initial value
-            "pageLength": 5,            
+            "pageLength": 15,            
             "pagingType": "bootstrap_full_number",
             "language": {
                 "search": "My search: ",

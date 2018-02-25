@@ -28,5 +28,9 @@ class Invoice extends Model
     	return $this->hasMany('App\Order', 'id', 'order');
     }
 
+    public function items() {
+        return $this->hasMany('App\Item', 'id');
+    }
+
 
 }

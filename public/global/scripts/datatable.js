@@ -66,13 +66,14 @@ var Datatable = function() {
 
                     "orderCellsTop": true,
                     "columnDefs": [{ // define columns sorting options(by default all columns are sortable extept the first checkbox column)
-                        'orderable': false,
-                        'targets': [0]
+                        'orderable': true,
+                        'targets': [0],
+                        "bSearchable": true,
                     }],
 
                     "pagingType": "bootstrap_extended", // pagination type(bootstrap, bootstrap_full_number or bootstrap_extended)
                     "autoWidth": false, // disable fixed width and enable fluid table
-                    "processing": false, // enable/disable display message box on record load
+                    "processing": true, // enable/disable display message box on record load
                     "serverSide": true, // enable/disable server side ajax loading
 
                     "ajax": { // define ajax settings
@@ -213,6 +214,7 @@ var Datatable = function() {
         },
 
         submitFilter: function() {
+            
             the.setAjaxParam("action", tableOptions.filterApplyAction);
 
             // get all typeable inputs
@@ -229,6 +231,8 @@ var Datatable = function() {
             $('input.form-filter[type="radio"]:checked', table).each(function() {
                 the.setAjaxParam($(this).attr("name"), $(this).val());
             });
+
+
 
             dataTable.ajax.reload();
         },

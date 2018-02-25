@@ -354,8 +354,8 @@
             <a href="javascript:;" class="loginblue-link">Privacy Policy </a>
             </label>
             <div id="register_tnc_error"> 
-            @if($errors)
-                error 
+            @if($errors->has('*'))
+                Something is not right..
             @endif
             </div>
         </div>

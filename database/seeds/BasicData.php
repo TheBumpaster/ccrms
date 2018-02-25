@@ -20,9 +20,7 @@ class BasicData extends Seeder
         	'name' => 'Items '. $i,
         	'description' => str_random(10),
         	'icon' => 'fa fa-coffee'
-
         	]);
-
 
         }
 
@@ -36,6 +34,7 @@ class BasicData extends Seeder
         		'quantity' => 100,
         		'category' => 1
         		]);
+
         }
 
         for ( $k = 0; $k < 2; $k++ ) {
@@ -45,6 +44,20 @@ class BasicData extends Seeder
         		'number' => $k,
         		'status' => 'Active'
         		]);
+
+        }
+
+        for ( $k = 0; $k < 7; $k++ ) {
+
+            DB::table('orders')->insert([
+                'purchased_on' => date("Y/m/d"),
+                'base_price' => '300',
+                'purchased_price' => '350',
+                'status' => 'Accepted',
+                'user' => '1',
+                'created_at' => date("Y/m/d h:i:s"),
+                'updated_at' => date("Y/m/d h:i:s")
+                ]);
 
         }
 

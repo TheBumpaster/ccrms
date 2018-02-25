@@ -58,12 +58,7 @@
 			<!-- BEGIN PAGE CONTENT-->
 			
 			<div class="row">
-				<div class="col-md-12">
-					<div class="note note-danger">
-						<p>
-							 NOTE: The below datatable is not connected to a real database so the filter and sorting is just simulated for demo purposes only.
-						</p>
-					</div>
+				
 					<!-- Begin: life time stats -->
 					<div class="portlet">
 						<div class="portlet-title">
@@ -108,18 +103,7 @@
 						</div>
 						<div class="portlet-body">
 							<div class="table-container">
-								<div class="table-actions-wrapper">
-									<span>
-									</span>
-									<select class="table-group-action-input form-control input-inline input-small input-sm">
-										<option value="">Select...</option>
-										<option value="Cancel">Cancel</option>
-										<option value="Cancel">Hold</option>
-										<option value="Cancel">On Hold</option>
-										<option value="Close">Close</option>
-									</select>
-									<button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> Submit</button>
-								</div>
+								
 								<table class="table table-striped table-bordered table-hover" id="datatable_orders">
 								<thead>
 								<tr role="row" class="heading">
@@ -133,10 +117,7 @@
 										 Purchased&nbsp;On
 									</th>
 									<th width="15%">
-										 Customer
-									</th>
-									<th width="10%">
-										 Ship&nbsp;To
+										 User
 									</th>
 									<th width="10%">
 										 Base&nbsp;Price
@@ -175,9 +156,6 @@
 										<input type="text" class="form-control form-filter input-sm" name="order_customer_name">
 									</td>
 									<td>
-										<input type="text" class="form-control form-filter input-sm" name="order_ship_to">
-									</td>
-									<td>
 										<div class="margin-bottom-5">
 											<input type="text" class="form-control form-filter input-sm" name="order_base_price_from" placeholder="From"/>
 										</div>
@@ -192,7 +170,7 @@
 									<td>
 										<select name="order_status" class="form-control form-filter input-sm">
 											<option value="">Select...</option>
-											<option value="pending">Pending</option>
+											<option value="accepted">Accepted</option>
 											<option value="closed">Closed</option>
 											<option value="hold">On Hold</option>
 											<option value="fraud">Fraud</option>

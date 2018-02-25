@@ -268,15 +268,17 @@
     @elseif ( Route::currentRouteName() == 'products')
         <script type="text/javascript" src="/global/plugins/select2/select2.min.js"></script>
         <script type="text/javascript" src="/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+       
+        <script type="text/javascript" src="/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+        
         <script type="text/javascript" src="/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
-        <script type="text/javascript" src="/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
         
         <script src="/global/scripts/metronic.js" type="text/javascript"></script>
         <script src="/admin/layout/scripts/layout.js" type="text/javascript"></script>
         <script src="/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
         <script src="/admin/layout/scripts/demo.js" type="text/javascript"></script>
         <script src="/global/scripts/datatable.js"></script>
-        <script src="/admin/pages/scripts/ecommerce-products.js"></script>
+        <script src="/admin/pages/scripts/table-managed.js"></script>
 
         <script>
         jQuery(document).ready(function() {    
@@ -284,7 +286,7 @@
             Layout.init(); // init current layout
             QuickSidebar.init(); // init quick sidebar
             Demo.init(); // init demo features
-           EcommerceProducts.init();
+            TableManaged.init();
         });
     </script>
 

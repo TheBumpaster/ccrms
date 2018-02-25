@@ -25,16 +25,34 @@ var EcommerceProducts = function () {
                 // Uncomment below line("dom" parameter) to fix the dropdown overflow issue in the datatable cells. The default datatable layout
                 // setup uses scrollable div(table-scrollable) with overflow:auto to enable vertical scroll(see: assets/global/scripts/datatable.js). 
                 // So when dropdowns used the scrollable div should be removed. 
-                //"dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r>t<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>",
+                "dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r>t<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>",
 
                 "lengthMenu": [
                     [10, 20, 50, 100, 150],
                     [10, 20, 50, 100, 150] // change per page values here 
                 ],
                 "pageLength": 10, // default record count per page
+
                 "ajax": {
-                    "url": "/demo/ecommerce_products.php", // ajax source
+                    "url": "/api/tableproducts", // ajax source
+                    
                 },
+
+                "columns": [
+
+                    {data: null, defaultContent: '<input type="checkbox" name="id[]" value="">' },
+
+                    {data: 'id', name: 'id'},
+                    {data: 'name', name: 'name'},
+                    {data: 'category', name: 'category'},
+                    {data: 'price', name: 'price'},
+                    {data: 'quantity', name: 'quantity'},
+                    {data: 'created_at', name: 'created_at'},
+
+                    {data: null, defaultContent: '<span class="label label-sm label-success">Active</span>'},
+                    {data: null, defaultContent: '<a href="/products/" class="btn btn-xs default btn-editable"><i class="fa fa-pencil"></i> Edit</a>'}
+                ],               
+
                 "order": [
                     [1, "asc"]
                 ] // set first column as a default sort by asc
@@ -51,6 +69,7 @@ var EcommerceProducts = function () {
                 grid.setAjaxParam("id", grid.getSelectedRows());
                 grid.getDataTable().ajax.reload();
                 grid.clearAjaxParams();
+               
             } else if (action.val() == "") {
                 Metronic.alert({
                     type: 'danger',

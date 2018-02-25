@@ -31,7 +31,6 @@ Route::get('/administration/activity', 'AdminController@activity')->name('activi
 
 Route::get('/administration/orders', 'AdminController@orders')->name('orders');
 Route::get('/administration/products', 'AdminController@products')->name('products');
-Route::get('/tableproducts', 'AdminController@tableProducts');
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 

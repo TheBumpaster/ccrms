@@ -9,15 +9,39 @@
 
 	<div class="page-content-wrapper">
 		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="product-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Products Settings</h4>
+						</div>
+						<div class="modal-body">
+							 Products Settings Go Here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			
+			<!-- END STYLE CUSTOMIZER -->
+			<!-- BEGIN PAGE HEADER-->
 			<h3 class="page-title">
-			Products <small>product listing</small>
+			Products <small>product manage table</small>
 			</h3>
+
 			<br/><br/>
 			<div class="page-bar">
 				<ul class="page-breadcrumb">
 					<li>
 						<i class="fa fa-home"></i>
-						<a href="index.html">Home</a>
+						<a href="/administration">Home</a>
 						<i class="fa fa-angle-right"></i>
 					</li>
 					<li>
@@ -28,162 +52,96 @@
 						<a href="#">Products</a>
 					</li>
 				</ul>
-				
 			</div>
 			<!-- END PAGE HEADER-->
 			<!-- BEGIN PAGE CONTENT-->
 			<div class="row">
 				<div class="col-md-12">
-					
-					<!-- Begin: life time stats -->
-					<div class="portlet">
+					<!-- BEGIN EXAMPLE TABLE PORTLET-->
+					<div class="portlet box grey-cascade">
 						<div class="portlet-title">
 							<div class="caption">
-								<i class="fa fa-gift"></i>Products
+								<i class="fa fa-globe"></i>Products Table
 							</div>
-							<div class="actions">
-								<div class="btn-group">
-									<a class="btn default yellow-stripe dropdown-toggle" href="javascript:;" data-toggle="dropdown">
-									<i class="fa fa-share"></i> Tools <i class="fa fa-angle-down"></i>
-									</a>
-									<ul class="dropdown-menu pull-right">
-										<li>
-											<a href="javascript:;">
-											Export to Excel </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Export to CSV </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											Export to XML </a>
-										</li>
-										<li class="divider">
-										</li>
-										<li>
-											<a href="javascript:;">
-											Print Invoices </a>
-										</li>
-									</ul>
-								</div>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
+								</a>
+								<a href="#product-config" data-toggle="modal" class="config">
+								</a>
+								<a href="javascript:;" class="reload">
+								</a>
+								<a href="javascript:;" class="remove">
+								</a>
 							</div>
 						</div>
 						<div class="portlet-body">
-							<div class="table-container">
-								<div class="table-actions-wrapper">
-									<span>
-									</span>
-									<select class="table-group-action-input form-control input-inline input-small input-sm">
-										<option value="">Select...</option>
-										<option value="publish">Publish</option>
-										<option value="unpublished">Un-publish</option>
-										<option value="delete">Delete</option>
-									</select>
-									<button class="btn btn-sm yellow table-group-action-submit"><i class="fa fa-check"></i> Submit</button>
+							<div class="table-toolbar">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="btn-group">
+											<button id="sample_editable_1_new" class="btn green">
+											Add New <i class="fa fa-plus"></i>
+											</button>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="btn-group pull-right">
+											<button class="btn dropdown-toggle" data-toggle="dropdown">Tools <i class="fa fa-angle-down"></i>
+											</button>
+											<ul class="dropdown-menu pull-right">
+												<li>
+													<a href="javascript:;">
+													Print </a>
+												</li>
+												<li>
+													<a href="javascript:;">
+													Save as PDF </a>
+												</li>
+												<li>
+													<a href="javascript:;">
+													Export to Excel </a>
+												</li>
+											</ul>
+										</div>
+									</div>
 								</div>
-								<table class="table table-striped table-bordered table-hover" id="datatable_products">
-								<thead>
-								<tr role="row" class="heading">
-									<th width="1%">
-										<input type="checkbox" class="group-checkable">
-									</th>
-									<th width="10%">
-										 ID
-									</th>
-									<th width="15%">
-										 Product&nbsp;Name
-									</th>
-									<th width="15%">
-										 Category
-									</th>
-									<th width="10%">
-										 Price
-									</th>
-									<th width="10%">
-										 Quantity
-									</th>
-									<th width="15%">
-										 Date&nbsp;Created
-									</th>
-									<th width="10%">
-										 Status
-									</th>
-									<th width="10%">
-										 Actions
-									</th>
-								</tr>
-								<tr role="row" class="filter">
-									<td>
-									</td>
-									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_id">
-									</td>
-									<td>
-										<input type="text" class="form-control form-filter input-sm" name="product_name">
-									</td>
-									<td>
-
-										
-										<select name="product_category" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											@foreach($categories as $cat )
-											<option value="{{$cat->id}}">{{$cat->name}}</option>
-											@endforeach
-										</select>
-										
-									</td>
-									<td>
-										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="product_price_from" placeholder="From"/>
-										</div>
-										<input type="text" class="form-control form-filter input-sm" name="product_price_to" placeholder="To"/>
-									</td>
-									<td>
-										<div class="margin-bottom-5">
-											<input type="text" class="form-control form-filter input-sm" name="product_quantity_from" placeholder="From"/>
-										</div>
-										<input type="text" class="form-control form-filter input-sm" name="product_quantity_to" placeholder="To"/>
-									</td>
-									<td>
-										<div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-											<input type="text" class="form-control form-filter input-sm" readonly name="product_created_from" placeholder="From">
-											<span class="input-group-btn">
-											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-										</div>
-										<div class="input-group date date-picker" data-date-format="dd/mm/yyyy">
-											<input type="text" class="form-control form-filter input-sm" readonly name="product_created_to " placeholder="To">
-											<span class="input-group-btn">
-											<button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-											</span>
-										</div>
-									</td>
-									<td>
-										<select name="product_status" class="form-control form-filter input-sm">
-											<option value="">Select...</option>
-											<option value="published">Published</option>
-											<option value="notpublished">Not Published</option>
-											<option value="deleted">Deleted</option>
-										</select>
-									</td>
-									<td>
-										<div class="margin-bottom-5">
-											<button class="btn btn-sm yellow filter-submit margin-bottom"><i class="fa fa-search"></i> Search</button>
-										</div>
-										<button class="btn btn-sm red filter-cancel"><i class="fa fa-times"></i> Reset</button>
-									</td>
-								</tr>
-								</thead>
-								<tbody>
-								</tbody>
-								</table>
 							</div>
+							<table class="table table-striped table-bordered table-hover" id="sample_1">
+							<thead>
+							<tr>
+								<th class="table-checkbox">
+									<input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes"/>
+								</th>
+								<th>
+									 ID
+								</th>
+								<th>
+									 Name
+								</th>
+								<th>
+									 Category
+								</th>
+								<th>
+									 Price
+								</th>
+								<th>
+									 Quantity
+								</th>
+								<th>
+									 Action
+								</th>
+							</tr>
+							</thead>
+							<tbody>
+
+							</tbody>
+							</table>
 						</div>
 					</div>
-					<!-- End: life time stats -->
+					<!-- END EXAMPLE TABLE PORTLET-->
 				</div>
 			</div>
+			
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
